@@ -79,7 +79,7 @@ a {
 
 .page-header {
 	background-color: transparent;
-	
+
 	& * {
 		z-index: 1000;
 	}
@@ -89,7 +89,7 @@ a {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	
+
 	height: 100px;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -104,19 +104,17 @@ a {
 }
 
 .logo {
-	font-size: 5rem;
+	font-size: 4rem;
 	font-weight: black;
 	font-style: italic;
-	line-height: 3.5rem;
+	line-height: 3rem;
 
   margin-top: 50px;
 	padding: 0px 15px;
 
-  transform: skew(-10deg, 10deg);
-	
 	& span {
 		display: block;
-		text-shadow: 5px 5px 0px rgba(255, 255, 255, 0.75);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 	}
 }
 </style>

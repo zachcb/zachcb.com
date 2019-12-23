@@ -22,7 +22,7 @@ class Reaction {
 				p1.y + vy * i
 			)
 		);
-	}  
+	}
 }
 
 export default Reaction;

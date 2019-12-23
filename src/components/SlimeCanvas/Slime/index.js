@@ -10,6 +10,9 @@ import {
     MOUSE_POW,
 } from "./constants";
 
+import Point from "./point";
+import Reaction from "./reaction";
+
 const getRandomNumber = (min = 1, max = 1000) => Math.floor(Math.random() * (max - min) + min)
 
 /*------------------------------*\
@@ -20,17 +23,17 @@ class Slime {
 	constructor() {
 		this.canvas = document.getElementById("slime");
 		this.devicePixelRatio = window.devicePixelRatio || 1;
-		
+
 		this.ctx = this.canvas.getContext('2d');
 		this.ctx.scale(this.devicePixelRatio, this.devicePixelRatio);
-		
+
 		this.mouse = {
 			x: this.canvas.width / 2,
 			y: this.canvas.height / 2,
 			mousedown: false,
 			power: 15,
 		};
-		
+
 		this.setCanvasSize = this.setCanvasSize.bind(this);
 		this.handleMouseDown = this.handleMouseDown.bind(this);
 		this.handleMouseUp = this.handleMouseUp.bind(this);
@@ -41,50 +44,50 @@ class Slime {
 		this.addListeners();
 
 		this.initialize();
-		
+
 		this.triggerResponse(this.canvas.width, this.canvas.height * 1.4);
 		this.triggerResponse(this.canvas.width / 8, 0);
-		
+
 		setInterval(() => {
 			this.triggerResponse(this.canvas.width * 3, this.canvas.height * 10);
-			this.triggerResponse(this.canvas.width, 0);
+      this.triggerResponse(this.canvas.width, 0);
 		}, 3000)
-		
+
 		this.tick = 0;
-		this.render(); 
+		this.render();
 	}
-	
+
 	initialize() {
 		const padding = 60 * this.devicePixelRatio;
 		const points = POINT_COUNT;
 		const y = this.canvas.height;
 		const p1 = new Point(0, y);
 		const p2 = new Point(this.canvas.width, y);
-		this.reaction = new Reaction(points, p1, p2);    
+		this.reaction = new Reaction(points, p1, p2);
 	}
-	
+
 	addListeners() {
 		window.addEventListener('resize', this.setCanvasSize);
 		window.addEventListener('mousedown', this.handleMouseDown);
 		window.addEventListener('mouseup', this.handleMouseUp);
 		window.addEventListener('mousemove', this.handleMouse);
 	}
-	
+
 	handleMouseDown(event) {
 		this.mouse.mousedown = true;
 	}
-	
+
 	handleMouseUp(event) {
 		this.mouse.mousedown= false;
 	}
-	
+
 	handleMouse(event) {
 		const x = event.clientX * this.devicePixelRatio;
 		const y = event.clientY * this.devicePixelRatio;
 		this.mouse.x = x;
 		this.mouse.y = y;
 	}
-	
+
 	setCanvasSize() {
 		this.canvas.width = window.innerWidth * this.devicePixelRatio;
 		this.canvas.height = window.innerHeight * this.devicePixelRatio;
@@ -93,7 +96,7 @@ class Slime {
 
 		this.initialize();
 	}
-	
+
 	triggerResponse(x, y) {
 		let closestPoint = {};
 		let closestDistance = -1;
@@ -116,19 +119,19 @@ class Slime {
 				idx = n;
 			}
 		}
-    
-		const halfHeight = this.canvas.height / 2;        
+
+		const halfHeight = this.canvas.height / 2;
 		const dy = y - halfHeight; // delta y from baseline
 
 		const spread = INTERACTIVE_SPREAD; // number of points to affect from closest point
 		const mod = (idx - spread) % points.length; // modulus
 		const start = mod < 0 ? points.length + mod : mod; // starting idx accounting for negatives
-		const length = spread * 2 + 1; // number of points total 
+		const length = spread * 2 + 1; // number of points total
 
 		let rad = 0; // start radian
 		const radInc = Math.PI / length; // radians bases on total length
 
-		// updates the wave points at the start index applying a sin wave 
+		// updates the wave points at the start index applying a sin wave
 		// so that it's peak is centered on the mouse
 		for (let n = 0; n < length; n++) {
 				const i = (start + n) % points.length;
@@ -139,11 +142,11 @@ class Slime {
 				rad += radInc;
 		}
 	}
-	
+
 	drawBackground() {
 		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
-	
+
 	drawCurve() {
 		this.ctx.lineCap = 'round';
 		// handy ref for getting the max or min value of an array
@@ -194,7 +197,7 @@ class Slime {
 		this.ctx.closePath();
 		this.ctx.fill();
 	}
-	
+
 	drawVerts() {
 		this.ctx.lineWidth = 2 * this.devicePixelRatio;
 		this.ctx.strokeStyle = '#009efd';
@@ -203,15 +206,15 @@ class Slime {
 			this.ctx.beginPath();
 			this.ctx.arc(p.x, p.y, POINT_RADIUS * this.devicePixelRatio, 0, Math.PI * 2, true);
 			this.ctx.closePath();
-			this.ctx.fill();     
+			this.ctx.fill();
 			this.ctx.stroke();
 		});
 	}
-	
+
 	updateResponsePower() {
 		const max = 10;
 		const mouse = this.mouse;
-        
+
 		if (mouse.mousedown && mouse.power > max) {
 				mouse.power = max;
 		} else if (mouse.mousedown) {
@@ -220,29 +223,29 @@ class Slime {
 				mouse.power = 1;
 		}
 	}
-	
+
 	updateResponse() {
     const points = this.reaction.points;
-        
+
 		for (var n = 0; n < points.length; n++) {
 			const p = points[n];
-            
+
       // force to apply to this point
 			let force = 0;
 
 			// forces caused by the point immediately to the left or the right
 			let forceFromLeft;
 			let forceFromRight;
-			
+
 			// wrap to left-to-right
-			if (n === 0) { 
+			if (n === 0) {
 				let dy = points[points.length - 1].y - p.y;
 				forceFromLeft = SPRING_CONSTANT * dy;
 			} else { // normally
 				let dy = points[n - 1].y - p.y;
 				forceFromLeft = SPRING_CONSTANT * dy;
 			}
-			
+
 			// wrap to right-to-left
 			if (n === points.length - 1) {
 				let dy = points[0].y - p.y;
@@ -255,7 +258,7 @@ class Slime {
 			// Also apply force toward the baseline
 			let dy = this.canvas.height / 2 - p.y;
 			const forceToBaseline = SPRING_CONSTANT_BASELINE * dy;
-            
+
 			// Sum up forces
 			force = force + forceFromLeft;
 			force = force + forceFromRight;
@@ -263,7 +266,7 @@ class Slime {
 
 			// Calculate acceleration
 			const acceleration = force / p.mass;
-     
+
 
 			// Apply acceleration (with damping)
 			p.vy = DAMPING * p.vy + acceleration;
@@ -272,7 +275,7 @@ class Slime {
 			p.y = p.y + p.vy;
 		}
 	}
-	
+
 	render() {
 		this.drawBackground();
 		this.drawCurve();
