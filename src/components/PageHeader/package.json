@@ -1,0 +1,5 @@
+{
+    "name": "page-header",
+    "main": "index.vue",
+    "private": true
+}
