@@ -6,10 +6,12 @@
 const purgecss = require('@fullhuman/postcss-purgecss')
 const postcssNested = require('postcss-nested')
 const postcssEnvPreset = require('postcss-preset-env')
+const postcssCalc = require('postcss-calc')
 
 const postcssPlugins = [
   postcssNested(),
-  postcssEnvPreset()
+  postcssEnvPreset(),
+  postcssCalc()
 ]
 
 if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())

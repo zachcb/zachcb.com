@@ -1,0 +1,10 @@
+[build]
+  command = "yarn build"
+  functions = "dist/lambdas"
+  publish = "build"
+
+[dev]
+  command = "yarn develop"
+  port = 8080
+  targetPort = 8080
+  publish = "dist"

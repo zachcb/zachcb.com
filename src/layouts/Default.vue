@@ -2,7 +2,11 @@
   <div class="page max-w-full mx-auto">
     <page-header></page-header>
 
-    <slot/>
+    <main class="max-w-6xl mx-auto">
+      <slot />
+    </main>
+
+    <page-footer></page-footer>
   </div>
 </template>
 
@@ -16,12 +20,14 @@ query {
 
 <script>
 import PageHeader from "../components/PageHeader";
+import PageFooter from "../components/PageFooter";
 
 export default {
   name: "DefaultLayout",
 
   components: {
-    PageHeader
+    PageHeader,
+    PageFooter
   }
 }
 </script>
@@ -33,8 +39,7 @@ body {
   padding:0;
   line-height: 1.5;
 
-  background-color: #8EC5FC;
-  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-color: #1e272e;
 }
 
 html, body {
@@ -51,7 +56,7 @@ a {
 .page {
 	position: relative;
 	color: #0E0E0E;
-	background-color: #1e272e;
+
 	height: 100%;
 }
 </style>
