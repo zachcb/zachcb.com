@@ -1,7 +1,7 @@
 [build]
   command = "yarn build"
   functions = "dist/lambdas"
-  publish = "build"
+  publish = "dist"
 
 [dev]
   command = "yarn develop"
