@@ -3,7 +3,7 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-const purgecss = require('@fullhuman/postcss-purgecss')
+// const purgecss = require('@fullhuman/postcss-purgecss')
 const postcssNested = require('postcss-nested')
 const postcssEnvPreset = require('postcss-preset-env')
 const postcssCalc = require('postcss-calc')
@@ -14,7 +14,7 @@ const postcssPlugins = [
   postcssCalc()
 ]
 
-if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
+// if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 
 module.exports = {
   siteName: 'zachcb',
