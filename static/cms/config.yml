@@ -14,11 +14,11 @@ collections:
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "title", name: "title", widget: "string" }
-      - { label: "date", name: "date", widget: "date" }
-      - { label: "slug", name: "slug", widget: "string" }
-      - { label: "body", name: "body", widget: "markdown" }
-      - label: "hero"
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - label: "Hero"
         name: "hero"
         widget: "image"
         default: "/static/images/oib44ois27m01.jpg"

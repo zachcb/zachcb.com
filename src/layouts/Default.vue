@@ -2,7 +2,7 @@
   <div class="page max-w-full mx-auto">
     <page-header></page-header>
 
-    <main class="max-w-6xl mx-auto">
+    <main class="content max-w-6xl mx-auto">
       <slot />
     </main>
 
@@ -32,31 +32,15 @@ export default {
 }
 </script>
 
-<style lang="postcss">
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-
-  background-color: #1e272e;
-}
-
-html, body {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 16px;
-	height: 100%;
-}
-
-a {
-	color: inherit;
-	text-decoration: unset;
-}
-
+<style lang="postcss" scoped>
 .page {
 	position: relative;
 	color: #0E0E0E;
 
 	height: 100%;
+}
+
+.content {
+  min-height: calc(100vh - 8rem - 3rem);
 }
 </style>

@@ -5,3 +5,23 @@
 :root {
   --color-primary: #05c46b
 }
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  margin:0;
+  padding:0;
+  line-height: 1.5;
+
+  background-color: #1e272e;
+}
+
+html, body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	height: 100%;
+}
+
+a {
+	color: inherit;
+	text-decoration: unset;
+}

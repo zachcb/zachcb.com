@@ -10,11 +10,11 @@
         <g-link to="/portfolio" class="inline-block px-4">
           <span class="border-transparent border-b-4">Portfolio</span>
         </g-link>
-        <g-link to="/posts" class="inline-block px-4">
-          <span class="border-transparent border-b-4">Blog</span>
-        </g-link>
         <g-link to="/resume" class="inline-block px-4">
           <span class="border-transparent border-b-4">Resume</span>
+        </g-link>
+        <g-link to="/posts" class="inline-block px-4">
+          <span class="border-transparent border-b-4">Words</span>
         </g-link>
       </nav>
     </div>

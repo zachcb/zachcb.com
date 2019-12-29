@@ -1,38 +1,41 @@
 <template>
   <Layout>
-    <h1>Blog</h1>
-    <ul>
-      <li v-for="edge in $page.posts.edges" :key="edge.node.id">
-        {{ edge.node.title }}
+    <h1>
+
+    </h1>
+
+    <ul class="pt-10">
+      <li v-for="{ node } in $page.posts.edges" :key="node.id" class="text-primary">
+        <g-link :to="`/posts/${node.slug}`" class="">
+          <h2 class="text-primary text-3xl font-black tracking-wider">{{ node.title }}</h2>
+          <span class="text-green-700 text-lg">{{ node.date }}</span>
+        </g-link>
       </li>
     </ul>
-
-    <Pager :info="$page.allBlogPost.pageInfo"/>
   </Layout>
 </template>
 
 <script>
-import { Pager } from 'gridsome'
-
 export default {
   metaInfo: {
     title: 'Posts'
   },
-
-  components: {
-    Pager
+  mounted() {
+    console.log(this.$page.posts)
   }
 }
 </script>
 
-
 <page-query>
-query {
-  posts: allPosts {
+query Post {
+  posts: allPost {
     edges {
       node {
-        id
         title
+        date (format: "DD MMMM, YYYY")
+        slug
+        hero
+        content
       }
     }
   }

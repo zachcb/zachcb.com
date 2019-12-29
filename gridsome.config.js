@@ -18,6 +18,27 @@ const postcssPlugins = [
 
 module.exports = {
   siteName: 'zachcb',
+
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: [
+        // ...global plugins
+      ]
+    }
+  },
+
+  templates: {
+    Post: [
+      {
+        path: '/posts/:slug',
+        component: './src/templates/Post.vue'
+      }
+    ]
+  },
+
   plugins: [
     {
       use: 'gridsome-plugin-tailwind',
@@ -30,7 +51,19 @@ module.exports = {
       options: {
         publicPath: `/cms`
       }
-    }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'data/posts/*.md',
+        typeName: 'Post',
+        remark: {
+          plugins: [
+            // ...local plugins
+          ]
+        }
+      }
+    },
   ],
   css: {
     loaderOptions: {
