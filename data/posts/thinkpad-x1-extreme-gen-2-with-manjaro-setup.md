@@ -2,6 +2,7 @@
 title: Thinkpad X1 Extreme Gen 2 With Manjaro Setup
 date: 2019-12-29T02:12:22.166Z
 slug: thinkpad-x1-extreme-gen-2-linux
+description: Attempt at getting Nvidia Offloading to work
 hero: /static/images/oib44ois27m01.jpg
 ---
 ## Install Refind
