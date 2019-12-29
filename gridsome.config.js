@@ -24,6 +24,12 @@ module.exports = {
         options: {
           config: './tailwind.config.js'
         }
+    },
+    {
+      use: `gridsome-plugin-netlify-cms`,
+      options: {
+        publicPath: `/cms`
+      }
     }
   ],
   css: {
