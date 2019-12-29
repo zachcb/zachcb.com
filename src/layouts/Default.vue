@@ -32,7 +32,7 @@ export default {
   },
 
   data: () => ({
-    isDark: false
+    isDark: true
   }),
 
   mounted() {
