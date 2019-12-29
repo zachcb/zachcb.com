@@ -4,9 +4,9 @@ module.exports = {
       colors: {
         primary: 'var(--color-primary)',
         secondary: 'var(--color-secondary)',
+        invert: 'var(--color-invert)',
       }
     }
-
   },
   variants: {},
   plugins: []
