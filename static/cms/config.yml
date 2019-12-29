@@ -8,7 +8,7 @@ media_folder: "static/images"
 public_folder: "static/images"
   
 collections:
-  - name: "post"
+  - name: "posts"
     label: "Post"
     folder: "data/posts"
     create: true
