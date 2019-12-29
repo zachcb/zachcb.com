@@ -3,7 +3,27 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #05c46b
+
+}
+
+.page.theme-light {
+  --color-primary: #1e272e;
+  --color-secondary: #485460;
+  --color-invert: #d2dae2;
+}
+
+.page.theme-dark {
+  --color-primary: #05c46b;
+  --color-secondary: #ff5e57;
+  --color-invert: #1e272e;
+}
+
+.page {
+  transition: background-color 0.3s;
+
+  & div {
+    transition: color 0.3s, border-color 0.3s;
+  }
 }
 
 body {
@@ -11,8 +31,6 @@ body {
   margin:0;
   padding:0;
   line-height: 1.5;
-
-  background-color: #1e272e;
 }
 
 html, body {
@@ -24,4 +42,28 @@ html, body {
 a {
 	color: inherit;
 	text-decoration: unset;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }

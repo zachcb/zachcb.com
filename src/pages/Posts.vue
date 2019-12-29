@@ -8,7 +8,7 @@
       <li v-for="{ node } in $page.posts.edges" :key="node.id" class="text-primary">
         <g-link :to="`/posts/${node.slug}`" class="">
           <h2 class="text-primary text-3xl font-black tracking-wider">{{ node.title }}</h2>
-          <span class="text-green-700 text-lg">{{ node.date }}</span>
+          <span class="text-secondary text-lg">{{ node.date }}</span>
         </g-link>
       </li>
     </ul>
@@ -19,9 +19,6 @@
 export default {
   metaInfo: {
     title: 'Posts'
-  },
-  mounted() {
-    console.log(this.$page.posts)
   }
 }
 </script>

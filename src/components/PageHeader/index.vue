@@ -1,10 +1,31 @@
 <template>
   <header class="h-32 text-primary">
     <div class="content flex max-w-6xl h-full mx-auto justify-between items-center">
-      <g-link to="/" class="logo px-2 text-6xl font-black uppercase italic leading-loose">
-        <span class="block">ZA</span>
-        <span class="block">CH</span>
-      </g-link>
+      <div class="flex justify-between items-center">
+        <g-link to="/" class="logo relative px-2 text-6xl font-black uppercase italic leading-loose">
+          <span class="block">ZA</span>
+          <span class="block">CH</span>
+        </g-link>
+
+        <div :class="[{
+          'bg-yellow-200 border-4 border-yellow-200': !isDark,
+          'border-4 border-primary': isDark
+        },'relative flex justify-between items-center rounded-full p-2 text-4xl text-center cursor-pointer']">
+          <font-awesome
+            v-if="isDark"
+            :icon="['fa', 'moon']"
+            class="moon mx-auto"
+            @click="toggleTheme"
+          />
+
+          <font-awesome
+            v-if="!isDark"
+            :icon="['fa', 'sun']"
+            class="sun mx-auto"
+            @click="toggleTheme"
+          />
+        </div>
+      </div>
 
       <nav class="nav text-3xl font-black uppercase">
         <g-link to="/portfolio" class="inline-block px-4">
@@ -20,6 +41,25 @@
     </div>
   </header>
 </template>
+
+<script>
+import { EventBus } from "../../Events";
+
+export default {
+  props: {
+    isDark: {
+      default: true,
+      type: Boolean
+    }
+  },
+
+  methods: {
+    toggleTheme() {
+      EventBus.$emit("TOGGLE_THEME");
+    }
+  }
+}
+</script>
 
 <style lang="postcss" scoped>
 .logo {
@@ -39,4 +79,16 @@
     border-color: var(--color-primary);
   }
 }
+
+/* .moon {
+  top: 0;
+  left: -50px;
+  transform: translateY(50%);
+}
+
+.sun {
+  top: 0;
+  right: -50px;
+  transform: translateY(50%);
+} */
 </style>
