@@ -1,0 +1,14 @@
+{
+  "files.exclude": {
+    "node_modules": true,
+    ".npm-offline-cache": true
+  },
+
+  "emmet.syntaxProfiles": {
+    "postcss": "css"
+  },
+
+  "files.associations": {
+    "*.css": "postcss"
+  }
+}
