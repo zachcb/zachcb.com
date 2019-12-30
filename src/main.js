@@ -15,7 +15,7 @@ library.add(faMoon, faSun);
 export default function (Vue, { router, head, isClient }) {
   head.link.push({
     rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css?family=Open+Sans:600,800,800i&display=swap"
+    href: "https://fonts.googleapis.com/css?family=Karla:400,700,700i|Open+Sans:600,800,800i&display=swap"
   });
 
   Vue.component('Layout', DefaultLayout);
