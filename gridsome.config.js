@@ -7,11 +7,13 @@
 const postcssNested = require('postcss-nested')
 const postcssEnvPreset = require('postcss-preset-env')
 const postcssCalc = require('postcss-calc')
+const postcssResponsiveType = require('postcss-responsive-type')
 
 const postcssPlugins = [
   postcssNested(),
   postcssEnvPreset(),
-  postcssCalc()
+  postcssCalc(),
+  postcssResponsiveType()
 ]
 
 // if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
