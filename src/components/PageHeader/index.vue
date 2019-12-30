@@ -1,6 +1,6 @@
 <template>
   <header class="h-32 text-primary">
-    <div class="content flex max-w-6xl h-full mx-auto justify-between items-center">
+    <div class="content flex max-w-5xl h-full mx-auto justify-between items-center">
       <div class="flex justify-between items-center">
         <g-link to="/" class="logo relative px-2 text-6xl font-black uppercase italic leading-loose">
           <span class="block">ZA</span>
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <nav class="nav text-3xl font-black uppercase">
+      <nav class="nav text-2xl font-black uppercase">
         <g-link to="/portfolio" class="inline-block px-4">
           <span class="border-transparent border-b-4">Portfolio</span>
         </g-link>
