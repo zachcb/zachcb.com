@@ -1,15 +1,11 @@
 <template>
   <Layout>
-    <h1>
-
-    </h1>
-
-    <ul class="pt-10">
-      <li v-for="{ node } in $page.posts.edges" :key="node.id" class="text-primary mb-5">
+    <ul>
+      <li v-for="{ node } in $page.posts.edges" :key="node.id" class="text-primary mb-5 hover:bg-gray-800">
         <g-link :to="`/posts/${node.slug}`">
+          <span class="text-secondary text-base">{{ node.date }}</span>
           <h2 class="text-primary text-3xl font-black tracking-wider">{{ node.title }}</h2>
-          <span class="text-secondary text-lg">{{ node.date }}</span>
-          <p>{{ node.description }}</p>
+          <p class="text-secondary text-lg">{{ node.description }}</p>
         </g-link>
       </li>
     </ul>
@@ -32,7 +28,7 @@ query Post {
         title
         date (format: "DD MMMM, YYYY")
         slug
-        hero
+        description
         content
       }
     }
