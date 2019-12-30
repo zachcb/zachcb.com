@@ -17,6 +17,10 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Date", name: "date", widget: "date" }
       - { label: "Slug", name: "slug", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        default: ["tip"]
       - { label: "Description", name: "description", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
       - label: "Hero"
