@@ -2,7 +2,7 @@
   <div :class="`page max-w-full mx-auto ${isDark ? 'theme-dark' : 'theme-light'} bg-invert`">
     <page-header :isDark="isDark"></page-header>
 
-    <main class="content max-w-6xl mx-auto">
+    <main class="content max-w-5xl mx-auto pt-10">
       <slot />
     </main>
 
@@ -47,11 +47,9 @@ export default {
 .page {
 	position: relative;
 	color: #0E0E0E;
-
-	height: 100%;
 }
 
 .content {
-  min-height: calc(100vh - 8rem - 3rem);
+  min-height: calc(100vh - 8rem - 5rem);
 }
 </style>
