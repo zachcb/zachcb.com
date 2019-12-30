@@ -1,11 +1,34 @@
 <template>
-  <footer class="bottom-0 h-12 w-full">
-    <div class="flex justify-between items-center h-full max-w-6xl mx-auto text-base text-primary">
+  <footer class="bottom-0 h-20 w-full">
+    <div class="flex justify-between items-center h-full max-w-5xl mx-auto text-base text-primary ">
       <nav>
-        <g-link to="/" class="pr-4">Home</g-link>
-        <g-link to="/portfolio" class="pr-4">Portfolio</g-link>
-        <g-link to="/blog" class="pr-4">Blog</g-link>
-        <g-link to="/resume" class="pr-4">Resume</g-link>
+        <g-link to="/" class="pr-4 underline">Home</g-link>
+        <g-link to="/portfolio" class="pr-4 underline">Portfolio</g-link>
+        <g-link to="/resume" class="pr-4 underline">Resume</g-link>
+        <g-link to="/blog" class="pr-4 underline">Words</g-link>
+
+        <span class="pr-4">|</span>
+
+        <g-link
+          href="https://twitter.com/ZachForYou"
+          target="_blank"
+          class="pr-4 underline"
+        >Twitter</g-link>
+        <g-link
+          href="https://github.com/zachcb"
+          target="_blank"
+          class="pr-4 underline"
+        >Github</g-link>
+        <g-link
+          href="https://stackoverflow.com/users/2394442/zach"
+          target="_blank"
+          class="pr-4 underline"
+        >Stack Overflow</g-link>
+        <g-link
+          href="https://www.linkedin.com/in/zachcb/"
+          target="_blank"
+          class="pr-4 underline"
+        >LinkedIn</g-link>
       </nav>
 
       <p class="flex justify-between items-center">
