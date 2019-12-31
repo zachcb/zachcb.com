@@ -11,8 +11,10 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.0",
     "gsap": "^3.0.4",
+    "lodash": "^4.17.15",
     "netlify-cms": "^2.10.2",
     "normalize-wheel": "^1.0.1",
+    "offscreen-canvas": "^0.1.1",
     "three": "^0.112.1"
   },
   "devDependencies": {

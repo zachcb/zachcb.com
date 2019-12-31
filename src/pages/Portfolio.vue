@@ -1,5 +1,7 @@
 <template>
   <Layout>
+    <!-- <gallery class="gallery" /> -->
+
     <template v-slot:background>
       <star-field class="canvas"></star-field>
     </template>
@@ -8,6 +10,7 @@
 
 <script>
 import StarField from "../components/StarField";
+// import Gallery from "../components/Gallery";
 
 export default {
   metaInfo: {
@@ -15,7 +18,8 @@ export default {
   },
 
   components: {
-    StarField
+    StarField,
+    // Gallery
   }
 }
 </script>
@@ -23,5 +27,9 @@ export default {
 <style lang="postcss" scoped>
 .canvas {
   z-index: -1;
+}
+
+.gallery >>> canvas {
+  width: 1000px !important;
 }
 </style>

@@ -7227,6 +7227,11 @@ object.values@^1.1.0:
     function-bind "^1.1.1"
     has "^1.0.3"
 
+offscreen-canvas@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/offscreen-canvas/-/offscreen-canvas-0.1.1.tgz#b2953bf503c6f60a7a4d7b0e1ec6c3070ea72036"
+  integrity sha512-gZYQ++TK0X9BD6bnMrgk7TGQ0TCVLP5YsCOnLaCP18WpKh3dYfkt0ma4gFhElohBizSwMzjDptam2zPxMUQ2wg==
+
 ol@^5.3.1:
   version "5.3.3"
   resolved "https://registry.yarnpkg.com/ol/-/ol-5.3.3.tgz#ad39b7b485fdbae4b3e1535a0a07cc5d88b0b9b5"
