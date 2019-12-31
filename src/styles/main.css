@@ -19,6 +19,7 @@
 }
 
 .page {
+  /* background-color: var(--color-invert); */
   transition: background-color 0.3s;
 
   & div {
@@ -31,6 +32,10 @@ body {
   margin:0;
   padding:0;
   line-height: 1.5;
+
+  & * {
+    box-sizing: border-box;
+  }
 }
 
 html, body {
@@ -42,6 +47,10 @@ html, body {
 a {
 	color: inherit;
 	text-decoration: unset;
+}
+
+.content-full-height {
+  min-height: calc(100vh - 8rem - 7rem);
 }
 
 .fade-enter-active, .fade-leave-active {
