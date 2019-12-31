@@ -6,11 +6,23 @@
           <span class="block">ZA</span>
           <span class="block">CH</span>
         </g-link>
+      </div>
 
-        <div :class="[{
-          'bg-yellow-200 border-4 border-yellow-200': !isDark,
-          'border-4 border-primary': isDark
-        },'relative flex justify-between items-center rounded-full p-2 text-4xl text-center cursor-pointer']">
+      <nav class="nav text-2xl font-black uppercase">
+        <g-link to="/portfolio" class="inline-block px-4">
+          <span class="border-transparent border-b-4">Portfolio</span>
+        </g-link>
+        <g-link to="/resume" class="inline-block px-4">
+          <span class="border-transparent border-b-4">Resume</span>
+        </g-link>
+        <g-link to="/posts" class="inline-block px-4">
+          <span class="border-transparent border-b-4">Words</span>
+        </g-link>
+      </nav>
+      <div :class="[{
+          'bg-yellow-200 border-2 border-yellow-200': !isDark,
+          'border-2 border-primary': isDark
+        },'relative flex justify-between items-center rounded-full p-1 text-xl text-center cursor-pointer']">
           <font-awesome
             v-if="isDark"
             :icon="['fa', 'moon']"
@@ -25,19 +37,6 @@
             @click="toggleTheme"
           />
         </div>
-      </div>
-
-      <nav class="nav text-2xl font-black uppercase">
-        <g-link to="/portfolio" class="inline-block px-4">
-          <span class="border-transparent border-b-4">Portfolio</span>
-        </g-link>
-        <g-link to="/resume" class="inline-block px-4">
-          <span class="border-transparent border-b-4">Resume</span>
-        </g-link>
-        <g-link to="/posts" class="inline-block px-4">
-          <span class="border-transparent border-b-4">Words</span>
-        </g-link>
-      </nav>
     </div>
   </header>
 </template>
