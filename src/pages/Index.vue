@@ -4,7 +4,7 @@
       <div class="box bg-gray-800 m-4 mx-auto" v-for="index in 300" :key="index"></div>
     </div>
 
-    <div class="jumbo relative flex justify-center items-center">
+    <div class="content-full-height relative flex justify-center items-center">
       <div class="text-center font-black text-primary uppercase leading-none">
         <p class="text-5xl">Zach Barnes</p>
         <p class="text-6xl">Full-Stack Web Developer</p>
@@ -45,10 +45,6 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
-.jumbo {
-  min-height: calc(100vh - 8rem - 3rem);
-}
-
 .boxes {
   /* display: flex;
   justify-content: center;
