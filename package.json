@@ -11,7 +11,9 @@
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.0",
     "gsap": "^3.0.4",
-    "netlify-cms": "^2.10.2"
+    "netlify-cms": "^2.10.2",
+    "normalize-wheel": "^1.0.1",
+    "three": "^0.112.1"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
