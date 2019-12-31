@@ -1,12 +1,14 @@
 <template>
-  <div :class="`page max-w-full mx-auto ${isDark ? 'theme-dark' : 'theme-light'} bg-invert`">
-    <page-header :isDark="isDark"></page-header>
+  <div :class="`page max-w-full mx-auto ${isDark ? 'theme-dark' : 'theme-light'} ${isBgTransparent ? 'bg-transparent' : 'bg-invert'}`">
+    <page-header class="mb-8" :isDark="isDark"></page-header>
 
-    <main class="content max-w-5xl mx-auto pt-10">
+    <main class="content-full-height max-w-5xl mx-auto">
       <slot />
     </main>
 
     <page-footer></page-footer>
+
+    <slot name="background"></slot>
   </div>
 </template>
 
@@ -32,8 +34,20 @@ export default {
   },
 
   data: () => ({
-    isDark: true
+    isDark: true,
   }),
+
+  computed: {
+    isBgTransparent() {
+      return this.$route.path.includes("portfolio");
+    }
+  },
+
+  created() {
+    if (this.$route.path.includes("portfolio")) {
+      this.isDark = true;
+    }
+  },
 
   mounted() {
     EventBus.$on("TOGGLE_THEME", () => {
@@ -47,9 +61,6 @@ export default {
 .page {
 	position: relative;
 	color: #0E0E0E;
-}
-
-.content {
-  min-height: calc(100vh - 8rem - 5rem);
+  z-index: 1000;
 }
 </style>
