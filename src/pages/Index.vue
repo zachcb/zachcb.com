@@ -1,19 +1,33 @@
 <template>
   <Layout>
-    <div class="boxes absolute top-0 left-0 w-full h-full">
-      <div class="box bg-gray-800 m-4 mx-auto" v-for="index in 300" :key="index"></div>
-    </div>
-
     <div class="content-full-height relative flex justify-center items-center">
-      <div class="text-center font-black text-primary uppercase leading-none">
-        <p class="text-5xl">Zach Barnes</p>
-        <p class="text-6xl">Full-Stack Web Developer</p>
-        <p class="flex text-xl justify-between items-center">
-          <span>15 Commits Pushed</span>
-          <span>24 Github Projects</span>
-          <span>23 Spotify Hours</span>
-        </p>
+      <div class="md:text-center sm:text-left font-black text-primary uppercase leading-none w-full">
+        <h1 class="text-2xl md:text-5xl">Zach Barnes</h1>
+
+        <h2 class="text-4xl md:text-6xl mb-3 md:mb-0 ">
+          <span class="block md:inline">Full-Stack</span>
+          <span class="block md:inline">Web Developer</span>
+        </h2>
+
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center leading-tight">
+          <p>
+            <span class="text-xl pr-2">1.5k</span>
+            <span class="text-base">Commits Pushed</span>
+          </p>
+
+          <p>
+            <span class="text-xl pr-2">24</span>
+            <span>Github Projects</span>
+          </p>
+
+          <p>
+            <span class="text-xl pr-2">103.4k</span>
+            <span>Spotify Hours</span>
+          </p>
+        </div>
       </div>
+
+      <g-link to="/portfolio" class="absolute bottom-0 mb-4 border-4 border-primary leading-loose text-2xl text-primary w-full font-black uppercase tracking-wide text-center">Portfolio</g-link>
     </div>
   </Layout>
 </template>

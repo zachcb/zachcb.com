@@ -1,8 +1,8 @@
 <template>
-  <div :class="`page max-w-full mx-auto ${isDark ? 'theme-dark' : 'theme-light'} ${isBgTransparent ? 'bg-transparent' : 'bg-invert'}`">
+  <div :class="`page flex flex-col max-w-full mx-auto px-4 ${isDark ? 'theme-dark' : 'theme-light'} ${isBgTransparent ? 'bg-transparent' : 'bg-invert'}`">
     <page-header class="mb-8" :isDark="isDark"></page-header>
 
-    <main class="content-full-height max-w-5xl mx-auto">
+    <main class="content-full-height max-w-5xl w-full mx-auto">
       <slot />
     </main>
 
@@ -39,14 +39,15 @@ export default {
 
   computed: {
     isBgTransparent() {
-      return this.$route.path.includes("portfolio");
+      return false;
+      // return this.$route.path.includes("portfolio");
     }
   },
 
   created() {
-    if (this.$route.path.includes("portfolio")) {
-      this.isDark = true;
-    }
+    // if (this.$route.path.includes("portfolio")) {
+    //   this.isDark = true;
+    // }
   },
 
   mounted() {
@@ -61,6 +62,6 @@ export default {
 .page {
 	position: relative;
 	color: #0E0E0E;
-  z-index: 1000;
+  /* z-index: 1000; */
 }
 </style>

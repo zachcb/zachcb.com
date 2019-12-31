@@ -1,5 +1,5 @@
 <template>
-  <footer class="bottom-0 h-20 w-full">
+  <footer class="bottom-0 h-20 w-full hidden md:block">
     <div class="flex justify-between items-center h-full max-w-5xl mx-auto text-base text-primary ">
       <nav>
         <g-link to="/" class="pr-4 underline">Home</g-link>

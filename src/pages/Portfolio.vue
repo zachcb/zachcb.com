@@ -1,16 +1,14 @@
 <template>
   <Layout>
-    <!-- <gallery class="gallery" /> -->
 
-    <template v-slot:background>
+
+    <!-- <template v-slot:background>
       <star-field class="canvas"></star-field>
-    </template>
+    </template> -->
   </Layout>
 </template>
 
 <script>
-import StarField from "../components/StarField";
-// import Gallery from "../components/Gallery";
 
 export default {
   metaInfo: {
@@ -18,8 +16,7 @@ export default {
   },
 
   components: {
-    StarField,
-    // Gallery
+
   }
 }
 </script>
