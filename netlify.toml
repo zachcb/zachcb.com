@@ -1,6 +1,6 @@
 [build]
   command = "yarn build"
-  functions = "dist/lambdas"
+  functions = "functions"
   publish = "dist"
 
 [dev]
@@ -8,3 +8,10 @@
   port = 8080
   targetPort = 8080
   publish = "dist"
+
+# Redirects
+[[redirects]]
+  from = "/add"
+  to = "/add-example"
+  status = 301
+  force = true
