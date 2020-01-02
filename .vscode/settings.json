@@ -1,7 +1,21 @@
 {
+  "vetur.validation.template": false,
+
+  "eslint.enable": true,
+  
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "vue"
+  ],
+
   "files.exclude": {
     "node_modules": true,
     ".npm-offline-cache": true
+  },
+
+  "emmet.includeLanguages": {
+    "postcss": "css"
   },
 
   "emmet.syntaxProfiles": {
@@ -10,5 +24,9 @@
 
   "files.associations": {
     "*.css": "postcss"
-  }
+  },
+
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
 }
