@@ -4,8 +4,8 @@
       <div class="md:text-center sm:text-left font-black text-primary uppercase leading-none w-full">
         <h1 class="text-2xl md:text-5xl">Zach Barnes</h1>
 
-        <h2 class="text-4xl md:text-6xl mb-3 md:mb-0 ">
-          <span class="block md:inline">Full-Stack</span>
+        <h2 class="text-4xl md:text-6xl mb-3 md:mb-0">
+          <span class="block md:inline">Full-Stack </span>
           <span class="block md:inline">Web Developer</span>
         </h2>
 
@@ -27,7 +27,7 @@
         </div>
       </div>
 
-      <g-link to="/portfolio" class="absolute bottom-0 mb-4 border-4 border-primary leading-loose text-2xl text-primary w-full font-black uppercase tracking-wide text-center">Portfolio</g-link>
+      <g-link to="/portfolio" class="absolute bottom-0 mb-4 border-4 border-primary leading-loose text-2xl text-primary w-full font-black uppercase tracking-wide text-center sm:block md:hidden">Portfolio</g-link>
     </div>
   </Layout>
 </template>
