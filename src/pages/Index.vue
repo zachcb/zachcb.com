@@ -1,12 +1,14 @@
 <template>
   <Layout>
     <div class="content-full-height relative flex justify-center items-center">
-      <div class="md:text-center sm:text-left font-black text-primary uppercase leading-none w-full">
-        <h1 class="text-2xl md:text-5xl">Zach Barnes</h1>
+      <div class="md:text-center sm:text-left font-black text-primary uppercase leading-none w-full sm:w-auto">
+        <h1 class="text-2xl md:text-5xl">
+          Zach Barnes
+        </h1>
 
         <h2 class="text-4xl md:text-6xl mb-3 md:mb-0">
-          <span class="block md:inline">Full-Stack </span>
-          <span class="block md:inline">Web Developer</span>
+          <span class="block sm:inline">Full-Stack </span>
+          <span class="block sm:inline">Web Developer</span>
         </h2>
 
         <div class="flex flex-col md:flex-row md:justify-between md:items-center leading-tight">
@@ -27,7 +29,12 @@
         </div>
       </div>
 
-      <g-link to="/portfolio" class="absolute bottom-0 mb-4 border-4 border-primary leading-loose text-2xl text-primary w-full font-black uppercase tracking-wide text-center sm:block md:hidden">Portfolio</g-link>
+      <g-link
+        to="/portfolio"
+        class="absolute bottom-0 mb-4 border-4 border-primary leading-loose text-2xl text-primary w-full font-black uppercase tracking-wide text-center sm:block md:hidden"
+      >
+        Portfolio
+      </g-link>
     </div>
   </Layout>
 </template>
@@ -37,7 +44,7 @@ import gsap from "gsap";
 
 export default {
   metaInfo: {
-    title: 'Portfolio for Zach Barnes'
+    title: "Portfolio for Zach Barnes",
   },
 
   mounted() {
@@ -47,15 +54,15 @@ export default {
       yoyo: true,
       repeat: -1,
       ease: "sine.inOut",
-      delay:1,
+      delay: 1,
       stagger: {
         amount: 0.5,
         grid: "auto",
-        from: "center"
-      }
+        from: "center",
+      },
     });
-  }
-}
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
