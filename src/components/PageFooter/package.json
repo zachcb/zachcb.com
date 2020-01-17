@@ -1,0 +1,5 @@
+{
+    "name": "page-footer",
+    "main": "index.vue",
+    "private": true
+}
