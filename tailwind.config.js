@@ -2,12 +2,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-        invert: 'var(--color-invert)',
-      }
-    }
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        invert: "var(--color-invert)",
+      },
+    },
   },
   variants: {},
-  plugins: []
-}
+  plugins: [],
+};
