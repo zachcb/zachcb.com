@@ -9,18 +9,21 @@
 
     <hr>
 
-    <div class="content text-secondary text-lg" v-html="$page.post.content" />
+    <div
+      class="content text-secondary text-lg"
+      v-html="$page.post.content"
+    />
   </Layout>
 </template>
 
 <script>
-  export default {
-    metaInfo () {
-      return {
-        title: this.$page.post.title
-      }
-    }
-  }
+export default {
+  metaInfo() {
+    return {
+      title: this.$page.post.title,
+    };
+  },
+};
 </script>
 
 <page-query>
