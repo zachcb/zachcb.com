@@ -2,10 +2,30 @@
   <footer class="bottom-0 h-20 w-full hidden md:block">
     <div class="flex justify-between items-center h-full max-w-5xl mx-auto text-base text-primary ">
       <nav>
-        <g-link to="/" class="pr-4 underline">Home</g-link>
-        <g-link to="/portfolio" class="pr-4 underline">Portfolio</g-link>
-        <g-link to="/resume" class="pr-4 underline">Resume</g-link>
-        <g-link to="/blog" class="pr-4 underline">Words</g-link>
+        <g-link
+          to="/"
+          class="pr-4 underline"
+        >
+          Home
+        </g-link>
+        <g-link
+          to="/portfolio"
+          class="pr-4 underline"
+        >
+          Portfolio
+        </g-link>
+        <g-link
+          to="/resume"
+          class="pr-4 underline"
+        >
+          Resume
+        </g-link>
+        <g-link
+          to="/blog"
+          class="pr-4 underline"
+        >
+          Words
+        </g-link>
 
         <span class="pr-4">|</span>
 
@@ -13,22 +33,30 @@
           href="https://twitter.com/ZachForYou"
           target="_blank"
           class="pr-4 underline"
-        >Twitter</g-link>
+        >
+          Twitter
+        </g-link>
         <g-link
           href="https://github.com/zachcb"
           target="_blank"
           class="pr-4 underline"
-        >Github</g-link>
+        >
+          Github
+        </g-link>
         <g-link
           href="https://stackoverflow.com/users/2394442/zach"
           target="_blank"
           class="pr-4 underline"
-        >Stack Overflow</g-link>
+        >
+          Stack Overflow
+        </g-link>
         <g-link
           href="https://www.linkedin.com/in/zachcb/"
           target="_blank"
           class="pr-4 underline"
-        >LinkedIn</g-link>
+        >
+          LinkedIn
+        </g-link>
       </nav>
 
       <p class="flex justify-between items-center">
@@ -43,3 +71,13 @@
     </div>
   </footer>
 </template>
+
+<script>
+export default {
+  name: "PageFooter",
+};
+</script>
+
+<style lang="postcss">
+
+</style>
