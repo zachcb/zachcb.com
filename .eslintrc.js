@@ -15,6 +15,8 @@ module.exports = {
       js: "never",
       vue: "never",
     }],
+    "import/no-extraneous-dependencies": ["off"],
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }]
   },
   parserOptions: {
     parser: "babel-eslint",
