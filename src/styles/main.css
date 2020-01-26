@@ -54,11 +54,11 @@ a {
 }
 
 .content-full-height {
-  @media screen and (min-width: 641px) {
+  @media screen and (min-width: 768px) {
     min-height: calc(100vh - 8rem - 7rem);
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 767px) {
     height: 100%;
   }
 }
