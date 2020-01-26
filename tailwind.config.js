@@ -9,5 +9,14 @@ module.exports = {
     },
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require("tailwind-css-variables")(
+      {
+        // modules
+      },
+      {
+        // options
+      },
+    ),
+  ],
 };

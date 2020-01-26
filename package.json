@@ -36,6 +36,7 @@
     "postcss-calc": "^7.0.1",
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
-    "postcss-responsive-type": "^1.0.0"
+    "postcss-responsive-type": "^1.0.0",
+    "tailwind-css-variables": "^2.0.3"
   }
 }
