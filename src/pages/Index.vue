@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import gsap from "gsap";
+// import gsap from "gsap";
 
 export default {
   metaInfo: {
@@ -48,19 +48,19 @@ export default {
   },
 
   mounted() {
-    gsap.to(".box", 1, {
-      scale: 0.01,
-      y: 100,
-      yoyo: true,
-      repeat: -1,
-      ease: "sine.inOut",
-      delay: 1,
-      stagger: {
-        amount: 0.5,
-        grid: "auto",
-        from: "center",
-      },
-    });
+    // gsap.to(".box", 1, {
+    //   scale: 0.01,
+    //   y: 100,
+    //   yoyo: true,
+    //   repeat: -1,
+    //   ease: "sine.inOut",
+    //   delay: 1,
+    //   stagger: {
+    //     amount: 0.5,
+    //     grid: "auto",
+    //     from: "center",
+    //   },
+    // });
   },
 };
 </script>
