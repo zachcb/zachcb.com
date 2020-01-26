@@ -1,7 +1,5 @@
 <template>
   <Layout>
-
-
     <!-- <template v-slot:background>
       <star-field class="canvas"></star-field>
     </template> -->
@@ -12,13 +10,13 @@
 
 export default {
   metaInfo: {
-    title: 'Portfolio'
+    title: "Portfolio",
   },
 
   components: {
 
-  }
-}
+  },
+};
 </script>
 
 <style lang="postcss" scoped>
