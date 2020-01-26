@@ -1,5 +1,5 @@
 <template>
-  <div id="Gallery"></div>
+  <div id="Gallery" />
 </template>
 
 <script>
@@ -14,16 +14,16 @@ class App {
       "https://images.unsplash.com/photo-1569503689347-a5dbdaca7c69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&h=768",
       "https://images.unsplash.com/photo-1575651607650-5a5c39edce9c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&h=768",
       "https://images.unsplash.com/photo-1575905283836-a741eb65a192?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&h=768",
-      "https://images.unsplash.com/photo-1573743338941-39db12ef9b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&h=768"
+      "https://images.unsplash.com/photo-1573743338941-39db12ef9b64?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1366&h=768",
     ];
 
     this.mouse = {
       x: 0,
-      y: 0
+      y: 0,
     };
 
     this.canvas = new Canvas({
-      images: this.images
+      images: this.images,
     });
 
     this.addEventListeners();
@@ -78,16 +78,18 @@ class App {
   }
 
   addEventListeners() {
-    window.addEventListener("mousewheel", this.onWheel.bind(this));
-    window.addEventListener("wheel", this.onWheel.bind(this));
+    if (window) {
+      window.addEventListener("mousewheel", this.onWheel.bind(this));
+      window.addEventListener("wheel", this.onWheel.bind(this));
 
-    window.addEventListener("mousedown", this.onTouchDown.bind(this));
-    window.addEventListener("mousemove", this.onTouchMove.bind(this));
-    window.addEventListener("mouseup", this.onTouchUp.bind(this));
+      window.addEventListener("mousedown", this.onTouchDown.bind(this));
+      window.addEventListener("mousemove", this.onTouchMove.bind(this));
+      window.addEventListener("mouseup", this.onTouchUp.bind(this));
 
-    window.addEventListener("touchstart", this.onTouchDown.bind(this));
-    window.addEventListener("touchmove", this.onTouchMove.bind(this));
-    window.addEventListener("touchend", this.onTouchUp.bind(this));
+      window.addEventListener("touchstart", this.onTouchDown.bind(this));
+      window.addEventListener("touchmove", this.onTouchMove.bind(this));
+      window.addEventListener("touchend", this.onTouchUp.bind(this));
+    }
   }
 
   update() {
@@ -103,6 +105,6 @@ class App {
 export default {
   mounted() {
     new App();
-  }
-}
+  },
+};
 </script>
