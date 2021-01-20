@@ -10,7 +10,7 @@
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.4.0",
     "gridsome": "^0.7.0",
-    "gsap": "^3.0.4",
+    "gsap": "^3.6.0",
     "netlify-cms": "^2.10.2"
   },
   "devDependencies": {
